@@ -1,0 +1,21 @@
+### POST
+POST http://localhost:8080/request-param
+Content-Type: application/x-www-form-urlencoded
+
+username=jung&age=20
+
+### POST
+POST http://localhost:8080/request-body-string
+Content-Type: text/plain
+
+hello
+
+
+### POST
+POST http://localhost:8080/request-body-json
+Content-Type: application/json
+
+{
+  "username" : "hong",
+  "age" : 20
+}
