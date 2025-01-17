@@ -1,15 +1,20 @@
 package org.example.core.order;
 
 import org.example.core.discount.DisCountPolicy;
-import org.example.core.discount.FixDiscountPolicy;
+import org.example.core.discount.RateDiscountPolicy;
 import org.example.core.member.Member;
 import org.example.core.member.MemberRepository;
 import org.example.core.member.MemoryMemberRepository;
 
-public class OderServiceImpl implements OrderService {
+public class OrderServiceImpl implements OrderService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
-    private final DisCountPolicy disCountPolicy = new FixDiscountPolicy();
+    private final MemberRepository memberRepository;
+    private final DisCountPolicy disCountPolicy;
+
+    public OrderServiceImpl(MemberRepository memberRepository, DisCountPolicy disCountPolicy) {
+        this.memberRepository = memberRepository;
+        this.disCountPolicy = disCountPolicy;
+    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
