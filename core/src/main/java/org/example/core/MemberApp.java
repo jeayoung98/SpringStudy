@@ -1,10 +1,8 @@
-package org.example;
+package org.example.core;
 
-import org.example.core.AppConfig;
 import org.example.core.member.Grade;
 import org.example.core.member.Member;
 import org.example.core.member.MemberService;
-import org.example.core.member.MemberServiceImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
